@@ -13,14 +13,3 @@ class Stack:
 
     def val(self):
         return self.st
-
-
-a = Stack([1, 7, 4, 9])
-print(a.val())
-a.push("o")
-print(a.val())
-print(a.peek())
-a.pop()
-print(a.val())
-a.pop()
-print(a.val())
