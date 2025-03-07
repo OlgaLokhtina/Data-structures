@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "datastructures"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["OlgaLokhtina <stella_3_@mail.ru>"]
 readme = "README.md"

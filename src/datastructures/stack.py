@@ -24,9 +24,12 @@ class Stack[T]:
             returns all the elements of the stack
     """
     def __init__(self, st: list[T] = None):
-        self.st = st
+        if st is None:
+            self.st = []
+        else:
+            self.st = st
 
-    def push(self, element: Any):
+    def push(self, element: T):
         """
         Adds the element to the stack
 
@@ -37,25 +40,31 @@ class Stack[T]:
         """
         self.st.append(element)
 
-    def pop(self):
+    def pop(self) -> T:
         """
         Removes the last element from the stack
 
-        :return: None
+        :return: T
         """
-        self.st.pop()
+        if self.st:
+            return self.st.pop()
+        else:
+            print("The stack is empty")
 
     def peek(self) -> T:
         """
         Returns the last element from stack
 
-        :return: the last element
+        :return: T
         """
-        return self.st[-1]
+        if self.st:
+            return self.st[-1]
+        else:
+            print("The stack is empty")
 
     def val(self) -> list[T]:
         """
         Returns all the elements of the stack
-        :return: the list of stack elements
+        :return: list[T]
         """
         return self.st
