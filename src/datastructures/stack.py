@@ -49,7 +49,7 @@ class Stack[T]:
         if self.st:
             return self.st.pop()
         else:
-            print("The stack is empty")
+            raise StackIsEmpty("Oooops!")
 
     def peek(self) -> T:
         """
@@ -60,7 +60,7 @@ class Stack[T]:
         if self.st:
             return self.st[-1]
         else:
-            print("The stack is empty")
+            raise StackIsEmpty('EMPTY')
 
     def val(self) -> list[T]:
         """
@@ -68,3 +68,10 @@ class Stack[T]:
         :return: list[T]
         """
         return self.st
+
+
+class StackIsEmpty(Exception):
+    pass
+
+
+
