@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "datastructures"
+version = "0.1.1"
+description = ""
+authors = ["OlgaLokhtina <stella_3_@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pytest = "^8.3.4"
+ruff = "^0.9.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
