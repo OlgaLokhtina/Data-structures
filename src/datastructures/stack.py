@@ -1,6 +1,3 @@
-from typing import Any
-
-
 class Stack[T]:
     """
     Class for creating Stack
@@ -9,12 +6,12 @@ class Stack[T]:
 
     Attributes
     ----------
-        st : any type
+        st : T
             element of stack
 
     Methods
     -------
-        push(element: Any):
+        push(element: T):
             adds the element to the stack
         pop():
             removes the last element from the stack
@@ -34,7 +31,7 @@ class Stack[T]:
         Adds the element to the stack
 
         :param element: new element for adding to stack
-        :type element: Any
+        :type element: T
 
         :return: None
         """
