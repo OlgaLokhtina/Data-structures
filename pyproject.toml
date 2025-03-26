@@ -1,15 +1,21 @@
 [tool.poetry]
 name = "datastructures"
-version = "0.1.1"
+version = "0.1.2"
 description = ""
 authors = ["OlgaLokhtina <stella_3_@mail.ru>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-pytest = "^8.3.4"
-ruff = "^0.9.6"
 
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.9.10"
+pytest = "^8.3.5"
+
+
+[tool.poetry.group.mygroup.dependencies]
+numpy = "^2.2.3"
 
 [build-system]
 requires = ["poetry-core"]
