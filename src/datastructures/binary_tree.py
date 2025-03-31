@@ -45,7 +45,18 @@ class Tree[T]:
         a = Tree(head)
         return a
 
+    def to_list(self) -> list[T]:
+        l[0] = self.head.val
 
-l = [1, 2, 3, 4, 5, 6, 7]
+        def tran(i=0, d=self.head):
+            l[i*2+1] = d.left.val
+            l[i*2+2] = d.right.val
+            tran(i*2+1, d.left)
+            tran(i*2+2, d.right)
+        return l
+
+
+l = [1, 2, 3, 4, None, 5, 6, None, 7]
 t = Tree.from_list(l)
-t.present_tree()
+p = t.to_list()
+print(p)
