@@ -2,7 +2,7 @@ from typing import Self
 
 
 class Node[T]:
-    def __init__(self, val: T | None = None):
+    def __init__(self, val: T):
         self.val = val
         self.right = None
         self.left = None
@@ -70,16 +70,5 @@ class Tree[T]:
             b = c
         lst = [r.val for r in result if r]
         return lst
-
-
-my_list = []
-t = Tree.from_list(my_list)
-t.present_tree()
-nl = t.to_list()
-print(nl)
-
-
-
-
 
 
