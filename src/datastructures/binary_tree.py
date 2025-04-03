@@ -2,7 +2,7 @@ from typing import Self
 
 
 class Node[T]:
-    def __init__(self, val: T):
+    def __init__(self, val: T | None = None):
         self.val = val
         self.right = None
         self.left = None
@@ -33,30 +33,34 @@ class Tree[T]:
 
     @classmethod
     def from_list(cls, list_value: list[T]) -> Self:
-        def create_tree(i):
-            if i < len(list_value):
-                h = Node(list_value[i])
-                if i*2+1 < len(list_value):
-                    h.left = create_tree(i*2+1)
-                if i*2+2 < len(list_value):
-                    h.right = create_tree(i*2+2)
-                return h
-        head = create_tree(0)
-        a = Tree(head)
-        return a
+        n = [Node(el) for el in list_value]
+        tree = Tree(n[0])
+        m = 0
+        j = 1
+        while j < len(n):
+            k = m
+            m = j
+            for i in range(k, j):
+                if n[i].val:
+                    print("Node - ", n[i].val)
+                    if j < len(n):
+                        n[i].left = n[j]
+                        print(n[j].val)
+                        j += 1
+                    if j < len(n):
+                        n[i].right = n[j]
+                        print(n[j].val)
+                        j += 1
+        return tree
 
     def to_list(self) -> list[T]:
-        l[0] = self.head.val
-
-        def tran(i=0, d=self.head):
-            l[i*2+1] = d.left.val
-            l[i*2+2] = d.right.val
-            tran(i*2+1, d.left)
-            tran(i*2+2, d.right)
-        return l
+        pass
 
 
-l = [1, 2, 3, 4, None, 5, 6, None, 7]
-t = Tree.from_list(l)
-p = t.to_list()
-print(p)
+my_list = [5, 3, 7, 3, None, 8, 1, None, None, 4, 2]
+t = Tree.from_list(my_list)
+print(t.present_tree())
+
+
+
+
