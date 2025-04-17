@@ -45,3 +45,11 @@ def test_from_empty_list_to_list(new_empty_list):
     assert empty_tree.to_list() == new_empty_list
 
 
+def test_tree_generator(new_list):
+    tree = Tree.from_list(new_list)
+    assert set(new_list) == set(tree)
+
+
+def test_tree_generator_single(new_single_list):
+    tree = Tree.from_list(new_single_list)
+    assert set(new_single_list) == set(tree)

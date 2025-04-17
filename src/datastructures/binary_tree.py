@@ -18,6 +18,21 @@ class Tree[T]:
     def __init__(self, head: Node | None = None):
         self.head = head
 
+    def __iter__(self):
+        return self.my_gener(self.head)
+
+    def my_gener(self, node):
+        if node is self.head:
+            yield node.val
+        if node.left:
+            yield node.left.val
+            for p in self.my_gener(node.left):
+                yield p
+        if node.right:
+            yield node.right.val
+            for p in self.my_gener(node.right):
+                yield p
+
     def present_tree(self):
         if self.head:
             print("Head -", self.head.val)
@@ -70,5 +85,3 @@ class Tree[T]:
             b = c
         lst = [r.val for r in result if r]
         return lst
-
-
