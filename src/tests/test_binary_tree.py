@@ -14,7 +14,7 @@ def new_binary_tree():
 
 @pytest.fixture()
 def new_list():
-    lst = [5, 4, 9, 1, 4, None, 10, 6, 9, 3, None]
+    lst = [5, 4, 9, 1, 4, None, 10, 6, 9, 2, None]
     return lst
 
 
